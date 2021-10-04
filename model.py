@@ -8,8 +8,7 @@ import pickle
 df = pd.read_csv('hiring.csv')
 
 #data cleansing
-df['experience'].fillna(0, inplace=True)
-df['test_score'].fillna(0, inplace=True)
+#file is small and data is clean. Hene, no cleansing is required.
 
 #Data volume is less. Hence we are training will the complete data set
 X = df.iloc[:, :3]
