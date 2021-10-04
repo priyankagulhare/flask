@@ -35,8 +35,17 @@ Please find the details below. 
               6. FlasK API - 
                      I have created a flask API with a UI interface. Please insert the values in the 3 textbox present in the UI, then click into the "Predict" button. The model.predict is been called and the result as the "Candidate should be : Hired or not" is been generated. 
               7. Deploying the model into the On-prem Server - 
-                     We can deploy this model, API, UI, CSS in the On-prem server or any of the cloud environment (AWS/Azure/GCP). I don't have credit card, hence I cannot create a free account in the Cloud env.
-                     If I a
+                     To deploy, we can use Gunicorn for our application server and Nginx or AWS Elastic Beanstalk for our web server. Or we can deploy it in cloud environment (AWS/Azure/GCP). I faced some challenges in making the Free Account in AWS. Hhence, I have not actually deployed the model. But I am providing the detailed steps below - 
+                     
+                     Lets dive into the app.py file -
+                            a. Created an app.py file. In the same dictionary, created a model.pkl file as well.
+                            b. first import the library
+                            c. Create an app with flask object.
+                            d. load the model
+                            e. @app.route - tells server to execute the code from the root
+                            f. Load the template
+                            g. Write the process to predict. Take the input values provided in the textbox. Convert it into the Numpy. Run Prediction & print the value.
+                            h. For run the API directly, we have written a seperate process.   
 
 
 ##4.     
