@@ -20,9 +20,9 @@ def predict():
     prediction = model.predict(final_features)
 
     if prediction > .5:
-		output=1
-	else:
-		output=0
+	output=1
+    else:
+	output=0
 
     return render_template('index.html', prediction_text='Candidate is Hired or not '.format(output))
 
