@@ -20,11 +20,11 @@ def predict():
     prediction = model.predict(final_features)
 
     if prediction > .5:
-	output=1
+	output='Hired'
     else:
-	output=0
+	output='Not Hired'
 
-    return render_template('index.html', prediction_text='Candidate is Hired or not '.format(output))
+    return render_template('index.html', prediction_text='Candidate Should be {} '.format(output))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
