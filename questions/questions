@@ -45,7 +45,14 @@ Please find the details below. 
                             e. @app.route - tells server to execute the code from the root
                             f. Load the template
                             g. Write the process to predict. Take the input values provided in the textbox. Convert it into the Numpy. Run Prediction & print the value.
-                            h. For run the API directly, we have written a seperate process.   
+                            h. when you run the app.py file form the backend, you will provieded an URL - http://127.0.0.1 host is 5000.
+                            g. Or you can deploy the using Gunicorn, Docker and AWS Elastic Beanstalk. 
+                            Install import the Gunicorn and run the app.run()
+                            Setup docker in the machine and create 2 files ((Dockerfile and requirement.txt). Dockerfile has the instruction for creating the environment, installing and deploying the Model
+                            requirements.txt has the version of all the library
+                            Hosting the application in AWS Elastic Beanstalk. Create file name as Dockerrun.aws.json. Pass the name (pass the applicaiton name) & Port. Go to the UI of AWS Elastic Beanstalk. Create Application by providing the Docker details, save S3 path, upload the Dockerrun.aws.json file. 
+                            After the deployment. Run the program using the curl command.
+                            
 
 
 ##4.     
