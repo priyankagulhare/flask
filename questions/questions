@@ -11,47 +11,54 @@ Please find the details below. 
 
 ##3.     
        Describe or implement the required infrastructure for deploying your application :- 
-       Priyanka - Basic model has been implemeted. You need to follow below 3 steps to run the model (use Terminal)
+       Priyanka - Basic model has been implemeted. 
+              
+              ###Problem Statement - 
+              Binary Classification. Looking at the years of experience, Interview_score and Expected_Salary, we are trying to predict "If the candidate will be hired or not"
+      
+      You need to follow below 3 steps to run the model (use Terminal)
               1: python model.py
               2: python app.py
-              3: http://127.0.0.1:5000 link is been created using localhost. Please click into it and fill in the data in the 3 textbox. Click onto Predict. You will get the result as the "Candidate should be Hired or Not"
-       
-       ###Problem Statement - 
-              Binary Classification. Looking at the years of experience, Interview_score and Expected_Salary, we are trying to predict "If the candidate will be hired or not"
+              3: http://127.0.0.1:5000 link is been created using localhost. Please click into it and fill in the data in the 3 textbox. Click onto Predict button. You will get the result as the "Candidate should be Hired or Not"
+              4: Model is not deployed in AWS. I dont have a credit card to create an accout in AWS. I have explained the steps to deploy execute in AWS using docker.
+        
               
-              
-       Below steps are been goven for the complete ML flow - 
+       For Complete ML flow, please refer to below steps - 
               1. Data Collection - 
                      Gather data from all the different sources. Depending on the data type, develop a pipeline which will keep on bringing in the data in the ML Environment.
-                     In our case, a UI has been built through which we are bringing in the data in the ML Environment.
+                     In our case, a UI has been built through which we are bringing in the data in the ML Environment for the prediction.
               2. EDA - 
                      Understanding of data is must. A detailed understanding of the data is required. Identify the Data Type. Its variance, outliner, different categotry types.
               3. Data Cleansing - 
-                     Clean the data as per the requirement. Remove the garbage values, convert the data into the machine learning readable format. In this flask model, data is present is clean. No specific cleansing is not required.
+                     Clean the data as per the requirement. Remove the garbage values, convert the data into the machine learning readable format. In this model, data is already clean. Hence, no specific cleansing is not required.
               4. Training Model - 
                      As the data sie in our model is too small. I have generated the data manually I have used all the data to train the model.
               5. Mode Evaluation - 
-                     Model is evaluated with variour ways. We can use F1-score or Confusion matrix. But in our P.S. as th data sie is less,I have tested by running the model with a new values.
+                     Model is evaluated with variour ways. We can use F1-score or Confusion matrix. But in our Problem statement, as the data size is less,I have tested by running the model with a new values.
               6. FlasK API - 
                      I have created a flask API with a UI interface. Please insert the values in the 3 textbox present in the UI, then click into the "Predict" button. The model.predict is been called and the result as the "Candidate should be : Hired or not" is been generated. 
-              7. Deploying the model into the On-prem Server - 
-                     To deploy, we can use Gunicorn for our application server and Nginx or AWS Elastic Beanstalk for our web server. Or we can deploy it in cloud environment (AWS/Azure/GCP). I faced some challenges in making the Free Account in AWS. Hhence, I have not actually deployed the model. But I am providing the detailed steps below - 
+             
+             7. Deploying the model on AWS - 
+                     To deploy, we can use Gunicorn for our application server and Nginx or AWS Elastic Beanstalk for our web server. Or we can deploy it in cloud environment (AWS/Azure/GCP). As I am not having the credit card, I faced some challenges in making the Account in AWS. Hhence, I have not actually deployed the model. But I am providing the detailed steps below - 
                      
-                     Lets dive into the app.py file -
-                            a. Created an app.py file. In the same dictionary, created a model.pkl file as well.
-                            b. first import the library
-                            c. Create an app with flask object.
-                            d. load the model
-                            e. @app.route - tells server to execute the code from the root
-                            f. Load the template
-                            g. Write the process to predict. Take the input values provided in the textbox. Convert it into the Numpy. Run Prediction & print the value.
-                            h. when you run the app.py file form the backend, you will provieded an URL - http://127.0.0.1 host is 5000.
-                            g. Or you can deploy the using Gunicorn, Docker and AWS Elastic Beanstalk. 
-                            Install import the Gunicorn and run the app.run()
-                            Setup docker in the machine and create 2 files ((Dockerfile and requirement.txt). Dockerfile has the instruction for creating the environment, installing and deploying the Model
-                            requirements.txt has the version of all the library
-                            Hosting the application in AWS Elastic Beanstalk. Create file name as Dockerrun.aws.json. Pass the name (pass the applicaiton name) & Port. Go to the UI of AWS Elastic Beanstalk. Create Application by providing the Docker details, save S3 path, upload the Dockerrun.aws.json file. 
-                            After the deployment. Run the program using the curl command.
+                     Lets dive into the detailed steps -
+                            1. Created an app.py file. In the same dictionary, create a model.pkl file.
+                            2. first import all the library
+                            3. Create an app as flask object.
+                            4. Load the model pickel file
+                            5. @app.route - tells server to execute the code from the root
+                            6. Load the template
+                            7. Write the process to predict. Take the input values provided in the textbox. Convert it into the Numpy. Run Prediction & print the value.
+                            8. when you run the app.py file form the backend, you will provieded an URL - http://127.0.0.1 host is 5000.
+                            9. We will be deploy using Gunicorn, Docker and AWS Elastic Beanstalk. 
+                            10. Install import the Gunicorn and run the app.run()
+                            11. Setup docker in the machine and create 2 files ((Dockerfile and requirement.txt). Dockerfile has the instruction for creating the environment, installing and deploying the Model
+                            12. requirements.txt has the version of all the library
+                            13. Hosting the application in AWS Elastic Beanstalk. Create file name as Dockerrun.aws.json having name (pass the application name) & Port. Go to the UI of AWS Elastic Beanstalk. Create Application by providing the Docker details, save S3 path, upload the Dockerrun.aws.json file. 
+                            14. After the deployment. Run the program using the curl command.
+                            15. Store all the UI Input and their prediciton into the S3 bucket.
+                            16. append the AWS and S3 data and train the model. Run the confusion matri or F1 score to gain the undertanding. if the evaluation matrix value is bigger than the previous run, then replace the pickle file with the file of the current trained data file.
+                            17. keep on observing the data by measuring the input data on different statistical scales. Keep on validating data. A proper logging and visualisation will help you to take better action.
                             
 
 
@@ -63,9 +70,16 @@ Please find the details below. 
 
 ##5.     
        How do you track quality of the predictions?
-       Priyanka - 
+       Priyanka - we need to ensure the data quality by these different ways -
+              1. calculate the p-value and other different statistical score (mean median mode) on the data.
+              2. Outliner detection. Better to create a dashboard, on which we can mark the otliner count per run. We can take valuable actions using that dashboard.
+              3. Calculate data variance.
+              4. Model Evaluation Matrix KPI. This is a very efficient way to calculate the model consistency.
+              5. Fairness of the data.
        
        
 ##6.    
        How would you re-train your model?
-       Priyanka - 
+       Priyanka - One way to define when do we need to retrain the model is -
+              we can train the model daily or in some interval with all the data (train - test split) and calculate the evaluation matrix.  if the score is above than the previous sccore then replace the pickle file with the newly trained pickle file. if new Score is less, then we will not do any action.
+       
