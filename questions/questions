@@ -1,1 +1,23 @@
 Hi,
+Please find the details below. 
+
+1.     Decide if you want to support an interactive or fit predict process :- 
+       Priyanka - Decided to built an interactive Prediction model. It conatins a flask UI in which the user can enter the values and post clicking on the 'Predict', you will get the prediction as "Candidate should be hired or not".
+
+2.     Implement an application that serves predictions to users :- 
+       Priyanka - All the file are present in the git. To execute the code, please read the Readme.md
+
+3.     Describe or implement the required infrastructure for deploying your application :- 
+
+
+4.     Provide a diagram describing the process
+       Priyanka - I have attached 2 diagrams. 
+       First diagram represents the complete architecture. 
+       Second diagram represents the part of the Data model I have implemented.
+
+5.     How do you track quality of the predictions?
+       Priyanka - 
+       
+       
+6.     How would you re-train your model?
+       Priyanka - 
