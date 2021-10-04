@@ -1,23 +1,55 @@
 Hi,
 Please find the details below. 
 
-1.     Decide if you want to support an interactive or fit predict process :- 
+##1.     
+       Decide if you want to support an interactive or fit predict process :- 
        Priyanka - Decided to built an interactive Prediction model. It conatins a flask UI in which the user can enter the values and post clicking on the 'Predict', you will get the prediction as "Candidate should be hired or not".
 
-2.     Implement an application that serves predictions to users :- 
+##2.     
+       Implement an application that serves predictions to users :- 
        Priyanka - All the file are present in the git. To execute the code, please read the Readme.md
 
-3.     Describe or implement the required infrastructure for deploying your application :- 
+##3.     
+       Describe or implement the required infrastructure for deploying your application :- 
+       Priyanka - Basic model has been implemeted. You need to follow below 3 steps to run the model (use Terminal)
+              1: python model.py
+              2: python app.py
+              3: http://127.0.0.1:5000 link is been created using localhost. Please click into it and fill in the data in the 3 textbox. Click onto Predict. You will get the result as the "Candidate should be Hired or Not"
+       
+       ###Problem Statement - 
+              Binary Classification. Looking at the years of experience, Interview_score and Expected_Salary, we are trying to predict "If the candidate will be hired or not"
+              
+              
+       Below steps are been goven for the complete ML flow - 
+              1. Data Collection - 
+                     Gather data from all the different sources. Depending on the data type, develop a pipeline which will keep on bringing in the data in the ML Environment.
+                     In our case, a UI has been built through which we are bringing in the data in the ML Environment.
+              2. EDA - 
+                     Understanding of data is must. A detailed understanding of the data is required. Identify the Data Type. Its variance, outliner, different categotry types.
+              3. Data Cleansing - 
+                     Clean the data as per the requirement. Remove the garbage values, convert the data into the machine learning readable format. In this flask model, data is present is clean. No specific cleansing is not required.
+              4. Training Model - 
+                     As the data sie in our model is too small. I have generated the data manually I have used all the data to train the model.
+              5. Mode Evaluation - 
+                     Model is evaluated with variour ways. We can use F1-score or Confusion matrix. But in our P.S. as th data sie is less,I have tested by running the model with a new values.
+              6. FlasK API - 
+                     I have created a flask API with a UI interface. Please insert the values in the 3 textbox present in the UI, then click into the "Predict" button. The model.predict is been called and the result as the "Candidate should be : Hired or not" is been generated. 
+              7. Deploying the model into the On-prem Server - 
+                     We can deploy this model, API, UI, CSS in the On-prem server or any of the cloud environment (AWS/Azure/GCP). I don't have credit card, hence I cannot create a free account in the Cloud env.
+                     If I a
 
 
-4.     Provide a diagram describing the process
+##4.     
+       Provide a diagram describing the process
        Priyanka - I have attached 2 diagrams. 
-       First diagram represents the complete architecture. 
-       Second diagram represents the part of the Data model I have implemented.
+       First diagram represents the complete architecture. - (Data Platform Architecture.png)
+       Second diagram represents the part of the Data model I have implemented. (ML Data Flow.png)
 
-5.     How do you track quality of the predictions?
+##5.     
+       How do you track quality of the predictions?
        Priyanka - 
        
        
-6.     How would you re-train your model?
+##6.    
+       How would you re-train your model?
        Priyanka - 
